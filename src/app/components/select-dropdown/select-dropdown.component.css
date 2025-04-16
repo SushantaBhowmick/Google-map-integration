@@ -1,0 +1,30 @@
+/* your-component.component.css */
+.custom-option {
+    display: flex;
+    align-items: center;
+  }
+  
+  .option-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  ng-select .ng-select-container {
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    padding: 4px;
+  }
+  
+  ng-select .ng-select-container .ng-value {
+    color: #007bff;
+  }
+  
+  ng-select .ng-select-container .ng-placeholder {
+    color: #6c757d;
+  }
+  
+  ng-select .ng-select-container .ng-select-search {
+    border: 1px solid #007bff;
+  }

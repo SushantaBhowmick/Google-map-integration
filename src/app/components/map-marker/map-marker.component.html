@@ -1,0 +1,35 @@
+<google-map height="100vh"
+            width="100vw"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="addMarker($event)">
+  <map-marker #marker="mapMarker"
+              *ngFor="let markerPosition of markerPositions; let i = index"
+              [position]="markerPosition"
+              (mapClick)="openInfoWindow(marker, i)"></map-marker>
+
+              <map-polygon *ngFor="let polygon of polygons"
+              [paths]="polygon.vertices"
+              [options]="polygon.options"
+              ></map-polygon>
+
+              <!-- <map-polygon [paths]="vertices" [options]="polygonOptions"></map-polygon> -->
+              <!-- <map-polyline [path]="vertices"></map-polyline> -->
+               
+              <!-- for polygon -->
+  <map-info-window #infoWindow>
+    <div class="custom-info-window">
+        <div class="info-title">Location Details</div>
+        <div class="info-content">{{ infoWindowContent }}</div>
+      </div>
+  </map-info-window>
+
+
+  <!-- for marker -->
+  <!-- <map-info-window>
+    <div class="custom-info-window">
+        <div class="info-title">Location Details</div>
+        <div class="info-content">{{ infoWindowContent }}</div>
+      </div>
+  </map-info-window> -->
+</google-map>

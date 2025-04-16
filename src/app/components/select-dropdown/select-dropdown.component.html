@@ -1,0 +1,13 @@
+<p>select-dropdown works!</p>
+<ng-select [items]="items"
+           bindLabel="name"
+           placeholder="Select an item"
+           [(ngModel)]="selectedItem"
+           (change)="onSelect($event)">
+  <ng-template ng-option-tmp let-item="item">
+    <div class="custom-option">
+      <img [src]="item.image" class="option-icon" />
+      {{ item.name }}
+    </div>
+  </ng-template>
+</ng-select>

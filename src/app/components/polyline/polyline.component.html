@@ -1,0 +1,31 @@
+<google-map
+  height="90vh"
+  width="100%"
+  [center]="center"
+  [zoom]="zoom"
+  (mapClick)="onMapClick($event)"
+>
+  <map-polyline
+  *ngFor="let polygon of vertices "
+    [options]="polylineOptions"
+    [path]="vertices"
+  ></map-polyline>
+
+  <map-polygon
+  *ngFor="let paths of polygonPaths; let i= index"
+  [paths]="paths"
+  [options]="polygonOptions"
+  (polygonMouseover)="onPolygonMouseOver($event)"
+  (polygonMouseout)="onPolygonMouseOut()"
+></map-polygon>
+
+<map-circle [center]="circleCenter" [radius]="radius" >
+</map-circle>
+
+<map-info-window >
+    <div>{{infoContent}}</div>
+</map-info-window>
+
+</google-map>
+
+<button (click)="createPolygon()">Create Polygon</button>

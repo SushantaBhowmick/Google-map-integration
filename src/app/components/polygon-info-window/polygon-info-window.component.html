@@ -1,0 +1,16 @@
+<google-map
+  height="100vh"
+  width="100%"
+  [center]="center"
+  [zoom]="zoom"
+>
+  <map-polygon
+    [paths]="polygonPaths"
+    [options]="polygonOptions"
+    (polygonMouseover)="onPolygonClick($event)"
+    (polygonMouseout)="onPolygonOut($event)"
+  ></map-polygon>
+  <map-info-window>
+    {{ infoContent }}
+  </map-info-window>
+</google-map>

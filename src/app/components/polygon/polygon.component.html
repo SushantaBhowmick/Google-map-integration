@@ -1,0 +1,13 @@
+<google-map
+  height="500px"
+  width="100%"
+  [center]="center"
+  [zoom]="zoom"
+  (mapInitialized)="onMapReady($event)"
+  [options]="mapOptions">
+  <map-polygon *ngFor="let polygon of polygons"
+    [paths]="polygon"
+    [options]="polygonOptions"
+   >
+  </map-polygon>
+</google-map>
