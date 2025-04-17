@@ -49,6 +49,7 @@ export class PolylineComponent {
   ngOnInit(): void {}
 
   onMapClick(event: google.maps.MapMouseEvent) {
+    console.log(event)
  
     if (event.latLng) {
       this.vertices.push(event.latLng.toJSON());
